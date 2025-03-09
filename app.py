@@ -51,24 +51,28 @@ st.markdown(
         padding: 10px;
         font-size: 16px;
     }
-    /* Updated header styling with background */
+    /* Updated compact header styling with cyan background and golden text */
     .app-header {
-        background: linear-gradient(90deg, #1a2e35 0%, #2c3e50 100%);
-        padding: 20px;
-        border-radius: 10px;
+        background: linear-gradient(90deg, #00b8d4 0%, #00838f 100%);
+        padding: 12px 20px;
+        border-radius: 8px;
         margin-bottom: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .header-text {
-        color: #4CAF50;
+        color: #FFD700;
         font-family: 'Arial', sans-serif;
-        font-size: 36px;
+        font-size: 28px;
         font-weight: bold;
         margin: 0;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        white-space: nowrap;
     }
     .stMarkdown h2 {
         color: #4CAF50;
@@ -82,9 +86,10 @@ st.markdown(
     .lottie-container {
         background-color: transparent;
     }
-    /* Increased size for header animation */
+    /* Compact header animation */
     .header-animation {
-        min-width: 150px;
+        min-width: 100px;
+        margin-left: 15px;
     }
     /* Amazing Footer Styling */
     .amazing-footer {
@@ -129,7 +134,7 @@ st.markdown(
     /* Responsive adjustments for mobile view */
     @media (max-width: 768px) {
         .header-text {
-            font-size: 24px;
+            font-size: 22px;
         }
         .stMarkdown h2 {
             font-size: 20px;
@@ -192,26 +197,26 @@ def generate_password(length=12):
 
 # Streamlit App
 def main():
-    # Updated Header with single line and background
+    # Updated Header with single line, cyan background and golden text
     st.markdown(
         """
         <div class="app-header">
-            <div style="margin-right: 20px;">
-                <span class="header-text">🔐 Ultimate Password Strength Checker</span>
+            <div>
+                <span class="header-text">🔐 SecurePass Pro</span>
             </div>
             <div class="header-animation">
         """,
         unsafe_allow_html=True,
     )
     if lottie_heading:
-        st_lottie(lottie_heading, height=150, key="heading")
+        st_lottie(lottie_heading, height=80, key="heading")
     st.markdown("</div></div>", unsafe_allow_html=True)
 
     # Description with Animation
     st.markdown(
         """
         <div class="fadeIn">
-            <p>Welcome to the <strong>Ultimate Password Strength Checker!</strong>  
+            <p>Welcome to <strong>SecurePass Pro!</strong>  
             Ensure your password is secure by checking:</p>
             <ul>
                 <li>✅ Length</li>
