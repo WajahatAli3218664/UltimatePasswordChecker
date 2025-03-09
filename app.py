@@ -66,7 +66,6 @@ st.markdown(
     /* Ensure Lottie animation is visible in both light and dark themes */
     .lottie-container {
         background-color: transparent;
-        text-align: center;
     }
     /* Amazing Footer Styling */
     .amazing-footer {
@@ -126,6 +125,9 @@ st.markdown(
             font-size: 14px;
             padding: 8px 16px;
         }
+        .lottie-container {
+            text-align: center;
+        }
     }
     </style>
     """,
@@ -175,11 +177,16 @@ def main():
     st.markdown(
         """
         <div style="display: flex; align-items: center; justify-content: center;">
-            <h1 style="margin: 0;">🔐 Ultimate Password Strength Checker</h1>
-        </div>
+            <div style="flex: 1; text-align: center;">
+                <h1 style="margin: 0;">🔐 Ultimate Password Strength Checker</h1>
+            </div>
+            <div style="flex: 1; text-align: center;">
         """,
         unsafe_allow_html=True,
     )
+    if lottie_heading:
+        st_lottie(lottie_heading, height=100, key="heading")
+    st.markdown("</div>", unsafe_allow_html=True)
 
     # Description with Animation
     st.markdown(
@@ -198,12 +205,6 @@ def main():
         """,
         unsafe_allow_html=True,
     )
-
-    # Main Lottie Animation in the center with increased size
-    if lottie_animation:
-        st.markdown('<div class="lottie-container">', unsafe_allow_html=True)
-        st_lottie(lottie_animation, height=400, key="animation")  # Increased height to 400
-        st.markdown('</div>', unsafe_allow_html=True)
 
     # Input Field
     password = st.text_input("🔑 Enter your password:", type="password")
@@ -241,6 +242,12 @@ def main():
     if st.button("Generate Password"):
         generated_password = generate_password(password_length)
         st.success(f"🔐 Generated Password: `{generated_password}`")
+
+    # Ensure Lottie Animation is always rendered
+    if lottie_animation:
+        st.markdown('<div class="lottie-container">', unsafe_allow_html=True)
+        st_lottie(lottie_animation, height=300, key="animation")
+        st.markdown('</div>', unsafe_allow_html=True)
 
     # Amazing Footer with Animation
     st.markdown(
