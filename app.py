@@ -51,9 +51,24 @@ st.markdown(
         padding: 10px;
         font-size: 16px;
     }
-    .stMarkdown h1 {
+    /* Updated header styling with background */
+    .app-header {
+        background: linear-gradient(90deg, #1a2e35 0%, #2c3e50 100%);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .header-text {
         color: #4CAF50;
         font-family: 'Arial', sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        margin: 0;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
     .stMarkdown h2 {
         color: #4CAF50;
@@ -66,6 +81,10 @@ st.markdown(
     /* Ensure Lottie animation is visible in both light and dark themes */
     .lottie-container {
         background-color: transparent;
+    }
+    /* Increased size for header animation */
+    .header-animation {
+        min-width: 150px;
     }
     /* Amazing Footer Styling */
     .amazing-footer {
@@ -109,7 +128,7 @@ st.markdown(
     .strength-3 { background-color: #69f0ae; width: 100%; }
     /* Responsive adjustments for mobile view */
     @media (max-width: 768px) {
-        .stMarkdown h1 {
+        .header-text {
             font-size: 24px;
         }
         .stMarkdown h2 {
@@ -173,20 +192,20 @@ def generate_password(length=12):
 
 # Streamlit App
 def main():
-    # Title with Lottie Animation
+    # Updated Header with single line and background
     st.markdown(
         """
-        <div style="display: flex; align-items: center; justify-content: center;">
-            <div style="flex: 1; text-align: center;">
-                <h1 style="margin: 0;">🔐 Ultimate Password Strength Checker</h1>
+        <div class="app-header">
+            <div style="margin-right: 20px;">
+                <span class="header-text">🔐 Ultimate Password Strength Checker</span>
             </div>
-            <div style="flex: 1; text-align: center;">
+            <div class="header-animation">
         """,
         unsafe_allow_html=True,
     )
     if lottie_heading:
-        st_lottie(lottie_heading, height=100, key="heading")
-    st.markdown("</div>", unsafe_allow_html=True)
+        st_lottie(lottie_heading, height=150, key="heading")
+    st.markdown("</div></div>", unsafe_allow_html=True)
 
     # Description with Animation
     st.markdown(
