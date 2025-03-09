@@ -51,7 +51,7 @@ st.markdown(
         padding: 10px;
         font-size: 16px;
     }
-    /* Updated compact header styling with cyan background and golden text */
+    /* Improved responsive header styling with cyan background and golden text */
     .app-header {
         background: linear-gradient(90deg, #00b8d4 0%, #00838f 100%);
         padding: 12px 20px;
@@ -59,11 +59,17 @@ st.markdown(
         margin-bottom: 20px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
+        flex-wrap: wrap;
+    }
+    .header-text-container {
+        flex: 1;
+        min-width: 200px;
+        text-align: center;
     }
     .header-text {
         color: #FFD700;
@@ -72,7 +78,12 @@ st.markdown(
         font-weight: bold;
         margin: 0;
         text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        white-space: nowrap;
+        display: inline-block;
+    }
+    .header-animation {
+        min-width: 80px;
+        max-width: 100px;
+        margin: 0 auto;
     }
     .stMarkdown h2 {
         color: #4CAF50;
@@ -85,11 +96,6 @@ st.markdown(
     /* Ensure Lottie animation is visible in both light and dark themes */
     .lottie-container {
         background-color: transparent;
-    }
-    /* Compact header animation */
-    .header-animation {
-        min-width: 100px;
-        margin-left: 15px;
     }
     /* Amazing Footer Styling */
     .amazing-footer {
@@ -131,10 +137,25 @@ st.markdown(
     .strength-1 { background-color: #ff5252; width: 50%; }
     .strength-2 { background-color: #ffd740; width: 75%; }
     .strength-3 { background-color: #69f0ae; width: 100%; }
-    /* Responsive adjustments for mobile view */
+    /* Improved responsive adjustments for mobile view */
     @media (max-width: 768px) {
+        .app-header {
+            flex-direction: column;
+            padding: 12px;
+        }
+        .header-text-container {
+            width: 100%;
+            margin-bottom: 10px;
+        }
         .header-text {
             font-size: 22px;
+            text-align: center;
+            display: block;
+        }
+        .header-animation {
+            width: 100%;
+            min-width: auto;
+            margin: 0 auto;
         }
         .stMarkdown h2 {
             font-size: 20px;
@@ -197,12 +218,12 @@ def generate_password(length=12):
 
 # Streamlit App
 def main():
-    # Updated Header with single line, cyan background and golden text
+    # Improved responsive header
     st.markdown(
         """
         <div class="app-header">
-            <div>
-                <span class="header-text">  🔐 Ultimate Password Strength Meter </span>
+            <div class="header-text-container">
+                <span class="header-text">🔐 Ultimate Password Strength Meter</span>
             </div>
             <div class="header-animation">
         """,
