@@ -202,7 +202,7 @@ def main():
         """
         <div class="app-header">
             <div>
-                <span class="header-text">🔐 SecurePass Pro</span>
+                <span class="header-text">🔐 Ultimate Password Strength Meter</span>
             </div>
             <div class="header-animation">
         """,
