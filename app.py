@@ -223,7 +223,7 @@ def main():
         """
         <div class="app-header">
             <div class="header-text-container">
-                <span class="header-text">🔐 Ultimate Password Strength Meter</span>
+                <span class="header-text">🔐 Ultimate Password Strength Meter✨</span>
             </div>
             <div class="header-animation">
         """,
