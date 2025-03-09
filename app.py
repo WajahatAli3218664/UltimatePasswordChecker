@@ -107,6 +107,28 @@ st.markdown(
     .strength-1 { background-color: #ff5252; width: 50%; }
     .strength-2 { background-color: #ffd740; width: 75%; }
     .strength-3 { background-color: #69f0ae; width: 100%; }
+    /* Responsive adjustments for mobile view */
+    @media (max-width: 768px) {
+        .stMarkdown h1 {
+            font-size: 24px;
+        }
+        .stMarkdown h2 {
+            font-size: 20px;
+        }
+        .stMarkdown h3 {
+            font-size: 18px;
+        }
+        .stTextInput>div>div>input {
+            font-size: 14px;
+        }
+        .stButton>button {
+            font-size: 14px;
+            padding: 8px 16px;
+        }
+        .lottie-container {
+            text-align: center;
+        }
+    }
     </style>
     """,
     unsafe_allow_html=True,
